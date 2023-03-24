@@ -30,7 +30,7 @@ print("Este es un comando de python","Este es otro",t) #comas separan weas de py
 print('id:','1')
 print('First Name')
 print('Last Name','Jobs')
-print('vamos a sumar esto'+'con esto otro')
+print('vamos a sumar esto'+' con esto otro')
 
 ###########################################
 #Continuar instrucción en variod renglones#
@@ -43,11 +43,38 @@ if 100>99 and \
 #######################################
 #Comandos diferentes en la misma liena#
 #######################################
-print("Hols "); print ("tu!!") # se considera mala practica
+print("Hola "); print ("tu!!") # se considera mala practica
 
 ##############################################
 #Usando préntesis redondos cuadrados o llaves#
 #se puede escribir en varios renglones       #
 ##############################################
 
+list = [1, 2, 3, 4,
+        5, 7, 8, 9,
+        10, 11,12]
+
+matriz = [[1,2,3,4],[5,6,7,8,],[9,10,11,12] ]
+
+print(list)
+print(matriz)
+
+##############################################################
+#Indentación escrita para procesos dependientes de : (puntos)#
+##############################################################
+
+if 10>5:
+    print("diez es mayor que cinco")
+    print("otra indentación")
+for i in list:
+    print (i)
+    print("ok")
+if 10 0>5:
+    print("verdadero")
+elif 5>3: # comienza segundo condicioneal
+    print ("estoc no se impriomirá")
+else: ("aquí nunca llega")
+############
+#Funcoiones#
+############
 
