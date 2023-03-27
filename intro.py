@@ -69,12 +69,43 @@ if 10>5:
 for i in list:
     print (i)
     print("ok")
-if 10 0>5:
+if 10>5:
     print("verdadero")
 elif 5>3: # comienza segundo condicioneal
     print ("estoc no se impriomirá")
 else: ("aquí nunca llega")
+
 ############
 #Funcoiones#
 ############
 
+def say_hello(name):
+    print("Hello", name)
+    print("Welcome to Pthob Tutorials")
+
+say_hello("Julian")
+
+####################################################
+#Input permite obtener datps del usuario en promter#
+####################################################
+
+nombre = input("Dame tu nombre")
+print("hola como estas")
+
+########################################
+#Los enteros son de presición ilimitada#
+########################################
+
+y = 50000000000000000000000000
+print(y)
+
+#################################################################
+#Se pueden delimitar los números cpn guión bajo pero no con coma#
+#################################################################
+
+y = 50_000_000
+print(y)
+
+#####################################################
+#La funcion int() cambia strings y floats a  enteros#
+#####################################################
