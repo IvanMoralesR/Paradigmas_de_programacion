@@ -43,7 +43,7 @@ if 100>99 and \
 #######################################
 #Comandos diferentes en la misma liena#
 #######################################
-print("Hola "); print ("tu!!") # se considera mala practica
+print("Hola "); print ("tu!!!") # se considera mala practica
 
 ##############################################
 #Usando préntesis redondos cuadrados o llaves#
@@ -72,7 +72,7 @@ for i in list:
 if 10>5:
     print("verdadero")
 elif 5>3: # comienza segundo condicioneal
-    print ("estoc no se impriomirá")
+    print ("esto no se impriomirá")
 else: ("aquí nunca llega")
 
 ############
@@ -81,7 +81,7 @@ else: ("aquí nunca llega")
 
 def say_hello(name):
     print("Hello", name)
-    print("Welcome to Pthob Tutorials")
+    print("Welcome to Python Tutorials")
 
 say_hello("Julian")
 
@@ -109,3 +109,56 @@ print(y)
 #####################################################
 #La funcion int() cambia strings y floats a  enteros#
 #####################################################
+numero=int(input("dame tu edad: "))
+type(numero)
+
+######################################################
+#La notación científica fr flotantes utilizando e o E#
+######################################################
+
+y= 12.2E-09  #1.2 x 10^{-9}
+print(y)
+
+####################################################
+#Los complejos se escriben con ña raíz fr menos uno#
+#j siempre con in numero com prefijo               #
+#no acepta la jota suelta  la jota viene ser la i  #
+####################################################
+z=1+1j
+print(z)
+# suma +
+# resta -
+#división /
+# modulo %
+# exponete **
+# // funcion piso
+# Funciones para tranformar números int() float() complex()
+# operacones abs () round() pow()
+
+print (round(3.14159,4)) #el coma 4 es que quiero redondear a 4 dijitos
+
+#########################
+#Strings de varias línas#
+#########################
+
+Parrafo]= """Día 1392 me tienen encadenado a un ecritorio,
+me obligan a aprender python, tengo hambre, ayuda"""
+print(parrafo)
+
+###############################################
+#La función len() obtiene el tamaño del string#
+###############################################
+
+n=len(parrafo)
+print(n)
+
+#############################################################
+#Las letras en un string ocupan lugares como en un arreglo  #
+#(tambien de atrás para adelantr comenzando en -1 el último)#
+#############################################################
+palabra= "hola"
+print (palabra[0])
+print (palabra[-4])
+
+
+
