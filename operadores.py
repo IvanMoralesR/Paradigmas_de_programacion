@@ -30,3 +30,84 @@ print(s)
 
 s.add(100) #add agraga un elemento al conjunto
 print(s)
+
+s.remove(100)
+print(s)
+
+s1={1,2,3,4,5}
+s2={4,5,6,1,8}
+
+su = s1|s2 #Unón
+print(su)
+
+si=s1&s2 #interseccion
+print(si)
+
+sr= s1-s2 #diferencia de conjuntos
+print(sr)
+
+sp=s2-s1
+print(sp)
+
+ss=s1^s2 #diferencia simétrica
+
+print(ss)
+
+#####################
+#Uso de diccionarios#
+#####################
+
+capitals={"USA":"Washinton D.C","France":"Paris","India":"New Dehli"}
+print (capitals)
+
+#############
+#llave:valor#
+#############
+#diccionario vacio
+
+d= {}
+
+#Llave entera, valor string
+numNamaes={1:"One",2:"Two",3:"Three"}
+
+#Llave real, valor string
+decNames={1.5:"One and a Half",2.5:"Two and a Half", 3.5:"Three and a Half"}
+
+#Llave tupla, valor string
+items={("Parker","Reynolds","Camlin"):"pen",("LG","Whirpool","Samsung"):"Refrigerator"}
+
+# Llave string, valor int
+romanNums= {'I':1, 'II':2, 'III':3, 'VI':4, 'V':5}
+print(romanNums)
+print(romanNums["I"]) #improme una definicion especifica :3
+
+print(capitals.get("India")) #imprime su definicion en el dicionario
+print(capitals.get("india")) #no imprime nada porque no esta en el diccionario
+
+#Reportar llve y valor
+for k in capitals:
+    print("Key= "+ k + ", Value= " + capitals[k])
+
+#Nuevo dato para el diccionario
+capitals["México"]="CDMX"
+print(capitals)
+
+#Borrar dato del diccionario
+
+del capitals ["México"]
+print(capitals)
+
+#Reportar llaves
+print(romanNums.keys()) #muestra las laves wiiiiii
+
+#Reporta valores
+print(romanNums.values()) #muestra las definiciones UwU
+
+#Juicio de llave (Está o no está la llave en el diccionario)
+print("I" in romanNums)
+print("X" in romanNums)
+print("XX" in romanNums)
+
+
+
+
