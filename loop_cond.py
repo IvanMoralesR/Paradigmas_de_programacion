@@ -99,3 +99,69 @@ for pair in numNames.items():
 #########################
 for k,v in numNames.items():
     print ("key = ", k, ", value = ", v)
+
+#|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+#/|\/|\/|\/|\
+#Funciones/|\
+#/|\/|\/|\/|\
+
+#################
+#Primera función#
+#################
+
+def saludo():
+    #//////////////////////////////////////////////////////////////////////////
+    #Documentación rapida de la función (lo que lleva o mas bien lo que hace)
+    #/////////////////////////////////////////////////////////////////////////
+    """Esta función saluda"""
+    print('¡Holi! ¿como estan?')
+
+#/////////////////////
+#Llamado de la función
+#/////////////////////
+
+saludo()
+
+#//////////////////////////////
+#Se ejecuta pero no se asigna 
+#////////////////////////////// 
+
+salida=saludo()
+
+#/////////////////
+#Esto no funciona
+#////////////////
+print(salida)
+
+#######################
+#Mostrar documentación#
+#######################
+#help(saludo)
+
+#######################
+#Función con argumento#
+#######################
+def salu2(nombre): #nombre es algo así como la variable en una función
+    '''Está función te saluda por tu nombre'''
+    print("buenas",nombre,"!")
+salu2("Julian")  #evaluamos la función en Julian
+salu2("Ermenejildo")
+
+###################################
+#Ahorrar trabjo al intérprete     #
+#nombre:str la variable es un str #
+###################################
+def saludos(nombre:str):
+     '''Está función te saluda por tu nombre  estrictamente'''
+     print("Buenas",nombre,"!")
+
+saludos("Ermenejildo")
+a=123
+print(type(a))
+saludos(a) #supongo que el inerprete hace su magia y convierte el str a in porque si jala
+
+
+
+
+
