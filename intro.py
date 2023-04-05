@@ -141,15 +141,15 @@ print (round(3.14159,4)) #el coma 4 es que quiero redondear a 4 dijitos
 #Strings de varias línas#
 #########################
 
-Parrafo]= """Día 1392 me tienen encadenado a un ecritorio,
+Parrafo= """Día 1392 me tienen encadenado a un ecritorio,
 me obligan a aprender python, tengo hambre, ayuda"""
-print(parrafo)
+print(Parrafo)
 
 ###############################################
 #La función len() obtiene el tamaño del string#
 ###############################################
 
-n=len(parrafo)
+n=len(Parrafo)
 print(n)
 
 #############################################################
