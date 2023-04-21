@@ -1,3 +1,4 @@
+
 ##############
 #Condiconales#
 ##############
@@ -159,9 +160,54 @@ def saludos(nombre:str):
 saludos("Ermenejildo")
 a=123
 print(type(a))
-saludos(a) #supongo que el inerprete hace su magia y convierte el str a in porque si jala
+saludos(a) #supongo que el inerprete hace su magia y convierte el str a int porque si jala
 
+###############################
+#Funcion con muchos argumentos#
+###############################
 
+def saludos_multiples(nombre1, nombre2, nombre3):
+    """Esta funcion saluda a 3 personas al mismo tiempo"""
+    print("Hola ",nombre1,nombre2,"y ",nombre3)
 
+saludos_multiples("Hugo","Paco","Luis")
+
+############################################
+#Función con cualquier numero de argumentos#
+############################################
+
+def muchos_saludos(*nombre):
+    """Esta funcion saluda a todos los que quieras"""
+    i=0
+
+    #/////////////////////////////////
+    #end= es para pinerlo de corrido
+    #/////////////////////////////////
+    print("Hols", end="")
+    while len(nombre) > i:
+        #Ultimo nombre
+        if(i==len(nombre)-1):
+            print(nombre[i])
+        else:
+I
+
+            #cualquier otro nombre
+            print(nombre[i], end=", ")
+        i+=1
+
+muchos_saludos("Chencho", "Mencho", "Sancho", "Pancho", "Juancho",)
+
+def greet( firstname,lastname):
+    print('Hello',firstname," ", lastname)
+
+################################################
+#Llamar a la función con argumentos en desorden#
+################################################
+
+greet(lastname='Zapata', firstname='Steve') #Se pueden especificar las variable en desorden
+
+####################################
+#Función conargumentos desconocidos#
+####################################
 
 
