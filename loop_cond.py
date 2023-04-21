@@ -189,7 +189,7 @@ def muchos_saludos(*nombre):
         if(i==len(nombre)-1):
             print(nombre[i])
         else:
-I
+
 
             #cualquier otro nombre
             print(nombre[i], end=", ")
@@ -206,8 +206,104 @@ def greet( firstname,lastname):
 
 greet(lastname='Zapata', firstname='Steve') #Se pueden especificar las variable en desorden
 
-####################################
-#Función conargumentos desconocidos#
-####################################
+#####################################
+#Función con argumentos desconocidos#
+#####################################
 
+def greet(**persona):
+    #/////////////////////////////////////////////////////////////
+    #Persona tiene las características de first name y lastname
+    #////////////////////////////////////////////////////////////
+    print('Hello', persona['firstname'], persona['lastname'])
 
+greet(firstname= 'Steve', lastname= 'Jobs')
+greet(lastname= 'Jobs', firstname= 'Steve')
+greet(firstname= 'Steve', lastname= 'Jobs', age= 55) #sepueden agragar más parametros de los necesarios
+
+#################################
+#Función con valores por defecto#
+#################################
+
+def greet(name= 'Guest'):
+    print('Hello', name)
+
+greet() #Utiliza el valor por defecto
+greet('Steve')
+
+#######################
+#Función con resultado#
+#######################
+
+def suma(a,b):
+    return a+b
+
+#################################
+#Progamación funcional          #
+#Se puden finciónes en funciónes#
+#################################
+
+total=suma(5, suma(5,10))
+print(total)
+
+################################################
+#Cálculo lamda                                 #
+#nombre de la función= lamabda variable : función#
+################################################
+
+x_al_cuadrado = lambda x : x*x
+
+a1 = x_al_cuadrado(5)
+print(a1)
+
+############################
+#Lambda de varias variables#
+############################
+
+suma = lambda x1, x2, x3: x1+x2+x3
+print(suma(99,98,97))
+
+sumas = lambda *x: x[0]+x[1]+x[2]+x[3]
+print(sumas(100,200,300,400))
+
+#########################################
+#Uso de una función anónima             #
+#El argumento va afuera entre parentesis#
+#########################################
+
+print((lambda x: x*x)(6)) #funcion anónima sin nombre pues
+
+##############################
+#Funcipon con variable global#
+#Evite el exceso             #
+##############################
+
+name= 'Steve'
+def greet():
+    global name #para utilizar una variable global(que viene afuera del bloque)
+    name='Bill'
+    print('Hello',name)
+
+greet()
+
+#/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+################################
+#Algoritmo 1                   #
+################################
+#Serie exponencial             #
+#Factorización de x            #
+#Negativos con funcion inversa #
+################################
+n=200
+x=-100.0
+flag= False
+if x<0:
+    x= -x
+s=1.0
+
+for i in range(n,0,-1):
+    s*= x/float(i)
+    s+= 1.0
+if flag == True:
+    s= 1/s
+print(s)
