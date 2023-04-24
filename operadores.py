@@ -108,6 +108,79 @@ print("I" in romanNums)
 print("X" in romanNums)
 print("XX" in romanNums)
 
+#############################################
+#Listas                                     #
+#Las listas pueden ser de objetos diferentes#
+#############################################
+miprimeralista=[]
+print(miprimeralista)
 
+##################
+#Llenado de lista#
+##################
 
+miprimeralista=[1,"Javier",1.34,"Bosco","Angel",True]
+print(miprimeralista)
 
+######################################
+#list: hacaer ina lista              #
+#range(i,j); secuencia de i hasta j-1#
+######################################
+nums= list(range(1,61)) #lista con rango
+
+for i in nums:
+    print(i)
+
+######################################
+#Incluir elementos nuevos a una lista#
+######################################
+
+nums.append(61)
+nums.append(62)
+nums.append(63)
+nums.append(61)
+print(nums)
+
+##############################
+#Quitar elementos de la lista#
+##############################
+
+nums.remove(61)
+print(nums)
+
+############################
+#Quitar numeroscon indice i#
+############################
+
+i=61
+del nums[i]
+print(nums)
+
+##############
+#Borrar lista#
+##############
+
+del nums
+
+##############
+#Sumar Listas#
+##############
+L1= [1,2,3]
+L2= [4,5,6]
+print(L1+L2) #junta las listas
+
+################
+#Llenado a mano#
+################
+
+Potencial=[]
+for i in range(0,1000):
+    Potencial.append(float(i))
+print(Potencial[100])
+
+################################
+#Generar una tupla con la lista#
+################################
+
+Potencial= tuple(Potencial)
+print(Potencial[100])
