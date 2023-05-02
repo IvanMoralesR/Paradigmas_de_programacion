@@ -117,7 +117,7 @@ print(estudiante.nombre)
 ####################
 
 class Cuadrilatero:
-    def __init__ (mi, a ,b ,c ,d):
+    def __init__ (mi, a, b, c, d):
         mi.lado1=a
         mi.lado2=b
         mi.lado3=c
@@ -138,7 +138,7 @@ class Rectangulo (Cuadrilatero):
         #########################
         #Constructor de su madre 
         #########################
-        super().__init__(a, b, c, d)
+        super().__init__(a, b, a, b)
 
 #####################
 #Su nieto Cuadrado
@@ -148,8 +148,47 @@ class Rectangulo (Cuadrilatero):
 
 class Cuadrado(Rectangulo):
     def __init__(self,a):
-        super().__init(a,a)
+        super().__init__(a,a)
 
     def area(self):
-        area=self.lado**2
+        area=self.lado1**2
         return area
+    #def perimetro(self):
+    #    p= 4.0*self.lado1
+    #    print("perimetro=",p)
+    #    return p
+
+######################
+#Crear un cuadrado
+######################
+cuadrado1= Cuadrado(5)
+
+#########################################################################################
+#Llamar al métdo perimetro, herencia de su abuelo, mejor le hubiera dejado los terrenos
+#########################################################################################
+perimetro1= cuadrado1.perimetro()
+
+################################
+#Lamar a su propio método área
+################################
+
+area1= cuadrado1.area()
+
+print("Perímetro= ", perimetro1)
+print("Área= ", area1)
+
+#####################################################################
+#sobreescribir un método de si madre o  abuela cualquier pariente
+#es volver a definir una función ya existente
+#miau################################################################
+
+
+
+
+#\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-')/\('-'
+
+#############
+#Asiciacion
+#############
+
+
