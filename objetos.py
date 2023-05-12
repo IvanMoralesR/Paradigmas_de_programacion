@@ -190,6 +190,36 @@ print("Área= ", area1)
 #############
 #Asociacion
 #############
+#######################################
+#La clase A tiene tres números reales
+#######################################
+class A:
+    __a:float=0.0
+    __b:float=0.0
+    __c:float=0.0
+    def __init__(self,a:float,b:float,c:float):
+        self.a=a
+        self.b=b
+        self.c=c
+
+#####################################
+#La calse B tiene 3 numeros reales
+#####################################
+class B:
+   __d:float=0.0
+   __e:float=0.0
+
+   def __init__(self,d:float,e:float):
+       self.d=d
+       self.e=e
+   
+   def sumar_todo(self, aa:float, bb:float):
+       x:float=self.d*self.e+aa+bb
+       return x
+#############
+#ASOCIACION
+#############
+
 #Usando objetos independientes
 objetoA= A(1.0,2.0,3.0)
 objetoB= B(4.0,5.0)
@@ -199,18 +229,51 @@ print(objetoB.sumar_todo(objetoA.a,objetoA.b))
 #El objeto C tinene dos reales y un objeto A
 #El objeto Ase instsncia dentro de C
 ###################################################
+
 class C:
     __d:float=0.0
     __e:float=0.0
-    __Aa:A=None
-    
-    def __init__(self,d:float,e:float):
-        self.d = d
-        self.e = e
-        #A está instanciado adentro 
-        self.Aa = A(1.0,2.0,3.0)
+    __Aa:A= None
 
-    def sumar_todos(self):
+    def __init__(self, d:float, e:float):
+        self.d= d
+        self.e= e
+        
+        # A eatá intanciado dentro
+        self.Aa= A(1.0, 2.0, 3.0)
+    def sumar_todo(self):
+        x:float=self.d + self.e + self.Aa.a + self.Aa.b
+        return x
+###################################
+#Composicion
+#contiene otoro objeto dentro
+###################################
+
+objetoC= C(1.0,5.0)
+print(objetoC.sumar_todo())
+
+#############################################
+#Objeto D tiene dos reales y un objeto A 
+#Definido por fuera
+#############################################
+
+class D:
+    __d:float=0.0
+    __e:float=0.0
+    __Aa:A=None
+
+    def __init__(self, d:float,e:float,Aa:A):
+        self.d=d
+        self.e=e
+        self.Aa=Aa
+
+    def sumar_todo(self):
         x:float=self.d+self.e+self.Aa.a+self.Aa.b
         return x
+######################################################
+#Agregación construye el objeto agregado por fuera
+######################################################
+
+objetoD= D(4.0,5.0,objetoA)
+print(objetoD.sumar_todo())
 
