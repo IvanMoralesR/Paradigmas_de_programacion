@@ -1,11 +1,11 @@
 from aplicacion.repositorio.repositoriodeusuarios import RepositorioDeUsuarios
-from aplicaion.repositrio.modelos.usuario import Usuario
+from aplicacion.modelos.usuario import Usuario
 
 ####################################################
 # Para llenar la interface hay que heredar la clase
 ####################################################
 
-class BaseDeDAtos(RepositorioDeUsuarios):
+class BaseDeDatos(RepositorioDeUsuarios):
     __host: str
     __user: str
     __password: str
@@ -15,7 +15,7 @@ class BaseDeDAtos(RepositorioDeUsuarios):
         mi.__user = user
         mi.__password = password
 
-    def abrir(mi ->) None:
+    def abrir(mi) -> None:
         print(f"Abriendo la conexíon a la base de datos: {mi.__host}:{mi.__user}@{mi.password}")
 
     def guardar (mi, usuario:Usuario)-> None:

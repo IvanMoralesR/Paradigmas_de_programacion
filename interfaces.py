@@ -1,10 +1,10 @@
 ########################################################
 #Del directorio aplicacion, 
 #  el subdirectorio repositorio, 
-#    el archivo basededatos.py: traer elobjeto Basededatos
+#    el archivo basededatos.py: traer elobjeto BaseDeDatos
 ########################################################
 
-from aplicaion.repositorio.basededatos import Basededatos
+from aplicacion.repositorio.basededatos import BaseDeDatos
 
 ############################################
 #Del directorio aplicaion, 
@@ -19,21 +19,21 @@ from aplicacion.repositorio.s3 import S3
 #     el archivo sistemade archivos.py: trar el objeto SistemaDeArchivos
 ##########################################################################
 
-from aplicaion.repositorio.sistemadearchivos import SistemaDeArchivos
+from aplicacion.repositorio.sistemadearchivos import SistemaDeArchivos
 #############################################
 #Del directorio aplicacion,
 #  del subdirectorio modelos
 #    el archivo usuario.py: traer Usuaruio
 ##############################################
 
-from aplicaio.modelo.usuario import Usuario
+from aplicacion.modelos.usuario import Usuario
 
 ####################################################################################
 #Del directorio aplicaion,
 #  del subdirectorio negocios,
 #    el archivo manejodeaplicaiones.py: trear el obejeto ManejoDeinscripciones
 ####################################################################################
-from aplicaciones.negocios.manejodeinscripciones import ManejoDeInscripciones
+from aplicacion.negocios.manejodeinscripciones import ManejoDeInscripciones
 
 ##########################
 #Crear el objeto Usuario
@@ -48,7 +48,7 @@ repositorioS3= S3("321321321","sdf324223","MiCubeta")
 #############################################################
 #Inerface inscribirUsuario del objeto ManejoDeInscripciones
 #############################################################
-ManejoDeinscripciones.inscribirUsuario(usuario,repositorioS3)
+ManejoDeInscripciones.inscribirUsuario(usuario,repositorioS3)
 print("\n")
 
 ######################################

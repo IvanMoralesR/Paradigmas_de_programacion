@@ -1,5 +1,5 @@
-from aplicacion.repoisitorio.repositoriodeusuarios import RepositorioDeUsuarios
-from aplicacion.modelos.usuarios import Usuario
+from aplicacion.repositorio.repositoriodeusuarios import RepositorioDeUsuarios
+from aplicacion.modelos.usuario import Usuario
 
 ###############################################
 #Implementa la interface RepositorioDeUsuarios
