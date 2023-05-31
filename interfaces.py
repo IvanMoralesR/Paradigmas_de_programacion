@@ -60,6 +60,6 @@ repositorioSistemaDeArchivos = SistemaDeArchivos("/home/users")
 ###############################################################
 #Interface inscribirUsuario del objeto ManejoDeInscripciones
 ###############################################################
-ManejoDeInscripciones.incribirUsuario(usuario,repositorioBaseDeDatos)
+ManejoDeInscripciones.inscribirUsuario(usuario,repositorioSistemaDeArchivos)
 print("\n")
 
