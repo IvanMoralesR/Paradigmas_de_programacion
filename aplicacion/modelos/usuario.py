@@ -23,7 +23,7 @@ class Usuario:
     def getApellido(mi)-> str:
         return mi.__apellido
     def getEdad(mi) -> int:
-        return mi.edad
+        return mi.__edad
 
 
 
