@@ -1,16 +1,16 @@
 ################################################
 # Cálcualo de curva Z-spline en n dimeciones
 ################################################
-#Ivan plagiando a sagredo \(^_^)/
+#Ivan plagiando a Julián Sagredo ESFM IPN 2023 \(^_^)/
 ################################################
 
 import numpy as np
 
 ################
-# Clase curva
+# Clase Curva
 ################
 
-class curva:
+class Curva:
     
     """==================================================
        Curva contruye la curva que pasa por los puntos x
@@ -23,4 +23,143 @@ class curva:
     #////////////
     #Constructor
     #///////////
-    def __init__(s,x:xfloat=[], dim:int= 3):
+    def __init__(s,x: xfloat=[], dim:int= 3):
+        s.x= np.array(x,dtype0=np.float64)
+        s.dim= dim
+        s.n:np.int32= int(len(s.x)/s.dim) #Numero de puntos UwU
+        s.l= []                           #Longitud de la curva
+        s.lista_de_puntos()
+        s.longitud()
+
+    #################
+    #Lista de Puntos
+    #################
+
+    def lista_de_puntos(s) -> str:
+        print(f"Número de puntos = {str s.n}")
+        
+        #Formato de datos
+        s.formato= ""
+        for j in range(s.dim):
+            s.formato += "%15.8e"
+        s.formato += "\n"
+
+        # tupla de variables a imprimir
+        for i in range (0,sn.n):
+            s.tup = (s.x[i],)
+            for ii in range (1,s.dim):
+                s.tup = s.tup + (s.x[i+ii*s.n],)
+            print(s.formato % s.tup)
+
+    #########################
+    #Longitud punto a punto
+    #########################
+
+    def longitud(s) -> None:
+        t:np.float=0.0
+        for i in range(0,s.n):
+            ip1= i+1
+            if i == s.n-1:
+                ip1 = 0
+            d:np.float64 = (s.x[ip1]-s.x[i])**2
+            for j in range(1, s.dim):
+                d += (s.x[ip1+j*s.n]-s.x[i+j*s.n])**2
+            t += d**0.5
+            s.l.append(t)
+        s.L = t
+        s.dx = t/float(s.n)
+
+    #################
+    # Interpolación
+    #################
+
+    def interpolacion(s,p:int=0,r:float=0.0)->  list:
+        """ r es el parámetro sobre la curva [0,1)
+            p es la suavidad de la cuerva """
+
+        rdx:np.float64 = 1.0/s.dx
+        xi:float = []
+        i:np.int32 = int(r*s.L*rdx)
+        a:np.float64 = r*s.L*rdx - float(i) # Distancia normalizada
+
+        ###############################
+        #Interpolación lineal C0
+        ###############################
+        if p== 0:
+            ip1:np.int32  = i+1
+            if i == s.n-1:
+                ip1= 0
+            xi.append(a*s.x[ip1] + (1.0-a)*s.x[i])
+            for j in range(1,s.dim):
+                xi.append(a*s.x[ip1+j*s.n]+(1.0-a)*s.x[i+j*s.n])
+
+        ###########################
+        #Interpolación cubica C1
+        ###########################
+
+        elif p == 1:
+            ip1:np.int32 = i+1
+            ip2:np.int32 = i+2
+            if i== s.n-1:
+               ip1= 0
+               ip2= 1
+            if i == s.n-1:
+               ip2= 0
+            im1:np.int32 = i-1
+            if i== 0:
+               im1= s.n-1
+            am1:np.float64 = a+1.0
+            ap1:np.float64 = 1.0-a
+            ap2:np.float64 = 2.0-a
+            z:np.float64 = 1.0 - 2.5*a*a + 1.5*a*a*a
+            zp1:np.float64 = 1.0 - 2.5*ap1*ap1 + 1.5*ap1*ap1*ap1
+            zp2:np.float64 = 0.5*(2.0-ap2)*(2.0-ap2)*(1.0-ap2)
+            zm1:np.float64 = 0.5*(2.0-am1)*(2.0-am1)*(1.0-am1)
+            xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+z,1*s.x[im1])
+            for j in range(1,s.dim):
+                xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+   
+    
+
+
+ 
+         
+  
+
+   
+    
+     
+      
+
+       
+        
+         
+          
+           
+            
+        
+
+
+          
+
