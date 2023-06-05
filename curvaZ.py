@@ -118,6 +118,72 @@ class Curva:
             xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+z,1*s.x[im1])
             for j in range(1,s.dim):
                 xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
+        ###########################
+        #Interpolación quintica C2
+        ###########################
+        elif p == 2:
+            ip1:np.int32 = i+1
+            ip2:np.int32 = i+2
+            ip3:np.int32 = i+3
+            if i == s.n-1:
+               ip1 = 0
+               ip2 = 1
+               ip3 = 3
+            if i== s.n-2:
+               ip2 = 0
+               ip3 = 1
+            if i == s.n-3:
+               ip3 = 0
+            im1:np.int32 = i-1
+            im2:np.int32 = i-2
+            if i == 0:
+               im1 = s.n-1
+               im2 = s.n-2
+            if i == 1:
+               im2 = sn-1
+            u12:np.float64 = 1.0/12.0
+            am1:np.float64= a+1.0
+            am2:np.float64= a+2.0
+            ap1:np.float64= 1.0-a
+            ap2:np.float64= 2.0-a
+            ap3:np.float64= 3.0-a
+            z:np.float64= 1.0+a*a*u12*(-15+a*(-35.0+a*(63.0+a*(-25.0))))
+            zp1:np.float64= 1.0+ap1*ap1*u12*(-15.0+ap1*(-35.0+ap1*(63.0+ap1*(-25.0))))
+            zp2:np.float64= -4.0+u12*ap2*(225.0+ap2*(-367.5+ap2*(272.5+ap2*(-94.5+12.5*ap2))))
+            zp3:np.float64= 18.0+u12*ap3*(-459.0+ap3*(382.5+ap3*(-156.5+ap3*(31.5-2.5*ap3))))
+            zm1:np.float64= -4.0+u12*am1*(225.0+am1*(-367.5+am1*(272.5+am1*(-94.5+12.5*am1))))
+            zm2:np.float64= 18.0+u12*am2*(-459.0+am2*(382.5+am2*(-156.5+am2*(31.5-2.5*am2))))
+            xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+zp3*s.x[ip3]+zm1*s.x[im1]+zm2*s.x[im2])
+            for j in range(1,s.dim):
+                xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zp3*s.x[ip3+j*s.n]+zm1*s.x[im1+j*s.n]+zm2*s.x[im2+j*s.n])
+        
+        else:
+            print("La suavidad de la curva debe ser 0, 1 o 2")
+
+        return xi
+
+######################################################################################
+# Función zspline cea wl Z-spline de un conjunto de puntos en dim dimensiones,
+# n segmentos y continuidad (aproximaciones) cont
+# x,y = zspline(conjunto de ountos, dimensión, número de segmentos, continuidad)
+#####################################################################################
+def zspline(puntos,dim,n,cont):
+    curva=Curva(puntos,dim)
+    dx:np.float64=1.0/float(n)
+    x = np.zeros(n,dtype=np.float64)
+    y = np.zeros(n,dtype=np.flost64)
+
+    for i in range(0,n):
+        r:np.float63= float(i)*dx
+        [x[i],y[i]] = curva.interpolación(cont,r)
+
+    return x,y
+
+
+
+
+   
+
 
 
 
