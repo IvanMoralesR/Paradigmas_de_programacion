@@ -10,14 +10,20 @@ from aplicacion.banco.cliente_bancario import ClienteBancario
 # Error por sacar más dinero de que tiene
 ##########################################
 try:
-    cliente = ClienteBancario("Jaime Andrade", "Hernández Sanchéz", 28. 0.0)
+    cliente = ClienteBancario("Jaime Andrade", "Hernández Sanchéz", 28, 0.0)
     cliente.guardarDinero(300)
     print(cliente,imprimirInfo())
     cliente.retirarDinero(400)
     print(cliente,imprimiInfo())
 #############################################
 # Exepcion es el objeto más general de error
-#############################################
+############################################
+except Exception as e:
+    print("Error "+ str(e))
+
+#####################################
+# Error por usar un atributo privado
+#####################################
 
 try:
     print(cliente.__nombres)
