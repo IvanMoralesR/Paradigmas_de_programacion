@@ -23,11 +23,12 @@ class Curva:
     #////////////
     #Constructor
     #///////////
-    def __init__(s,x: xfloat=[], dim:int= 3):
-        s.x= np.array(x,dtype0=np.float64)
+    def __init__(s, x : float=[], dim:int= 3):
+
+        s.x= np.array(x, dtype = np.float64)
         s.dim= dim
-        s.n:np.int32= int(len(s.x)/s.dim) #Numero de puntos UwU
-        s.l= []                           #Longitud de la curva
+        s.n : np.int32 = int(len(s.x)/s.dim) #Numero de puntos UwU
+        s.l=[]                           #Longitud de la curva
         s.lista_de_puntos()
         s.longitud()
 
@@ -36,7 +37,7 @@ class Curva:
     #################
 
     def lista_de_puntos(s) -> str:
-        print(f"Número de puntos = {str s.n}")
+        print(f"Número de puntos = {str(s.n)}")
         
         #Formato de datos
         s.formato= ""
@@ -45,7 +46,7 @@ class Curva:
         s.formato += "\n"
 
         # tupla de variables a imprimir
-        for i in range (0,sn.n):
+        for i in range (0,s.n):
             s.tup = (s.x[i],)
             for ii in range (1,s.dim):
                 s.tup = s.tup + (s.x[i+ii*s.n],)
@@ -103,7 +104,7 @@ class Curva:
             if i== s.n-1:
                ip1= 0
                ip2= 1
-            if i == s.n-1:
+            if i == s.n-2:
                ip2= 0
             im1:np.int32 = i-1
             if i== 0:
@@ -115,7 +116,7 @@ class Curva:
             zp1:np.float64 = 1.0 - 2.5*ap1*ap1 + 1.5*ap1*ap1*ap1
             zp2:np.float64 = 0.5*(2.0-ap2)*(2.0-ap2)*(1.0-ap2)
             zm1:np.float64 = 0.5*(2.0-am1)*(2.0-am1)*(1.0-am1)
-            xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+z,1*s.x[im1])
+            xi.append(zp1*s.x[ip1]+z*s.x[i]+zp2*s.x[ip2]+zm1*s.x[im1])
             for j in range(1,s.dim):
                 xi.append(zp1*s.x[ip1+j*s.n]+z*s.x[i+j*s.n]+zp2*s.x[ip2+j*s.n]+zm1*s.x[im1+j*s.n])
         ###########################
@@ -140,7 +141,7 @@ class Curva:
                im1 = s.n-1
                im2 = s.n-2
             if i == 1:
-               im2 = sn-1
+               im2 = s.n-1
             u12:np.float64 = 1.0/12.0
             am1:np.float64= a+1.0
             am2:np.float64= a+2.0
@@ -171,11 +172,11 @@ def zspline(puntos,dim,n,cont):
     curva=Curva(puntos,dim)
     dx:np.float64=1.0/float(n)
     x = np.zeros(n,dtype=np.float64)
-    y = np.zeros(n,dtype=np.flost64)
+    y = np.zeros(n,dtype=np.float64)
 
     for i in range(0,n):
         r:np.float63= float(i)*dx
-        [x[i],y[i]] = curva.interpolación(cont,r)
+        [x[i],y[i]] = curva.interpolacion(cont,r)
 
     return x,y
 
