@@ -1,6 +1,6 @@
 import random as rand
 import matplotlib.pyplot  as plt #biblioteca para graficar
-import matplotlib.patches 
+import matplotlib.patches as pat 
 
 class Particula():
     def __init__(self,x:float,y:float):
@@ -24,6 +24,7 @@ class Nodo():
 
     def get_particulas(self):
         return self.particulas
+    
 def subdivision_recursiva(nodo:Nodo, k:int):
     if len(nodo.particulas)<=k:
             return
@@ -32,8 +33,8 @@ def subdivision_recursiva(nodo:Nodo, k:int):
     h_  = float(0.5*nodo.alto)
 
     p= cuantas_contiene(nodo.x0, nodo.y0, w_, h_, nodo.particulas)
-    nodo.x1= Nodo(nodo.x0,nodo.y0, w_, h_, p)
-    subdivision_recursiva(nodo.x1,k)
+    nodo.x1= Nodo(nodo.x0, nodo.y0, w_, h_, p)
+    subdivision_recursiva(nodo.x1, k)
 
     p= cuantas_contiene(nodo.x0, nodo.y0+h_, w_, h_, nodo.particulas)
     nodo.x2= Nodo(nodo.x0, nodo.y0+h_, w_, h_, p)
@@ -53,7 +54,7 @@ def subdivision_recursiva(nodo:Nodo, k:int):
 def cuantas_contiene(x:float, y:float, w:float, h:float, particulas):
     pts= []
     for particula in particulas:
-      if particula.x >=x and particula.x<= x+y and particula.y>=y and particula.y<= y+h:
+      if particula.x >=x and particula.x<= x+w and particula.y>=y and particula.y<= y+h:
         pts.append(particula)
     return pts
 
@@ -91,7 +92,7 @@ class QTree():
             areas. add(el.ancho*el.ancho)
         print("Mínima área por segmento: %.3f units" %min(areas))
         for n in c:
-            plt.gcf().gca().add_patch(patches.Rectangle((n.x0, n.y0), n.ancho, n.alto, fill= False))
+            plt.gcf().gca().add_patch(pat.Rectangle((n.x0, n.y0), n.ancho, n.alto, fill= False))
         x= [particula.x for particula in self.particulas]
         y= [particula.y for particula in self.particulas]
         plt.plot(x,y, 'ro') # mueatra particulas como puntos rojos
