@@ -37,4 +37,6 @@ elif rank == 1:
 #si yo no soy ni el uno ni el dos hago esto 
 ##############################################
 else:
-    print("yo no soy ninguno de lo sprimeros 2 procesos")
+    print("yo no soy ninguno de los primeros 2 procesos")
+
+print("Repotándome, soy el proceso ", str(rank), " de ", str(size), " UwU")
