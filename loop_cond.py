@@ -181,7 +181,7 @@ def muchos_saludos(*nombre):
     i=0
 
     #/////////////////////////////////
-    #end= es para pinerlo de corrido
+    #end= es para ponerlo de corrido
     #/////////////////////////////////
     print("Hols", end="")
     while len(nombre) > i:
@@ -206,9 +206,9 @@ def greet( firstname,lastname):
 
 greet(lastname='Zapata', firstname='Steve') #Se pueden especificar las variable en desorden
 
-#####################################
-#Función con argumentos desconocidos#
-#####################################
+########################################
+#Función con argumentos desconocidos **#
+########################################
 
 def greet(**persona):
     #/////////////////////////////////////////////////////////////

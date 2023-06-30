@@ -84,7 +84,7 @@ print(romanNums["I"]) #improme una definicion especifica :3
 print(capitals.get("India")) #imprime su definicion en el dicionario
 print(capitals.get("india")) #no imprime nada porque no esta en el diccionario
 
-#Reportar llve y valor
+#Reportar llave y valor
 for k in capitals:
     print("Key= "+ k + ", Value= " + capitals[k])
 
@@ -96,6 +96,9 @@ print(capitals)
 
 del capitals ["México"]
 print(capitals)
+
+#Borrar todo el diccionario
+del capitals
 
 #Reportar llaves
 print(romanNums.keys()) #muestra las laves wiiiiii
@@ -112,7 +115,7 @@ print("XX" in romanNums)
 #Listas                                     #
 #Las listas pueden ser de objetos diferentes#
 #############################################
-miprimeralista=[]
+miprimeralista=[] #lista vacia
 print(miprimeralista)
 
 ##################
@@ -123,7 +126,7 @@ miprimeralista=[1,"Javier",1.34,"Bosco","Angel",True]
 print(miprimeralista)
 
 ######################################
-#list: hacaer ina lista              #
+#list: hacaer una lista              #
 #range(i,j); secuencia de i hasta j-1#
 ######################################
 nums= list(range(1,61)) #lista con rango
@@ -149,7 +152,7 @@ nums.remove(61)
 print(nums)
 
 ############################
-#Quitar numeroscon indice i#
+#Quitar numeros con indice i#
 ############################
 
 i=61

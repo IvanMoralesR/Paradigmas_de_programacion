@@ -13,9 +13,9 @@ if rank == 1:
 if rank == 0:
     dst= 1
     src =1
-randNum= np.random.random.random_sample(1)
+randNum= np.random.random_sample(1)
 print("Process", rank, "drew the number", randNum[0])
 comm.Isend(randNum, dest=dst)
-req= comm.Ircv(randNum, source=src)
+req= comm.Irecv(randNum, source=src)
 req.Wait()
-print("Process", rank, "recived the number", ranNum[0])
+print("Process", rank, "recived the number", randNum[0])
